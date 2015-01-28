@@ -1,15 +1,16 @@
+```shell
    _
   | |     ___   ___ 
   | |    / _ \ / _ \
   | |___|  __/| (_) |
    \_____\___| \___/
-
+```
 ##work flow是工作流前端界面
 
 ## 安装
 
 ```shell
-git clone https://github.com/zlstone/city_selection.git
+git clone https://github.com/zlstone/work_flow.git
 ```
 依赖于jquery，初始化前将会进行检测全局变量检测
 加载js文件前请确保jquery已正确加载并配置为全局变量，否则workflow不会进行初始化
