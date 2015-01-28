@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>city选择</title>
+	<style type="text/css">
+	#jsPlumb_demo{position:relative;}
+	</style>
+</head>
+<body>
+	<button id="button1" type="button">初始化默认工作流</button>
+	<button id="button2" type="button">XML工作流展现</button>
+	<button id="button3" type="button">关系图1展现</button>
+	<button id="button4" type="button">关系图2展现</button>
+	<div id="jsPlumb_demo" class="demo" style="margin-left:100px;">
+	</div>
+	<!-- <textarea style="width: 80%;height:400px;" name="" id="" cols="30" rows="10"></textarea> -->
+	<script type="text/javascript" src="jquery_2.0.3.js"></script>
+	<script type="text/javascript">
+	var jsPlumb_Z_config ={
+		type : 'ajax',	//数据获取类型，可选择XML，ajax
+		url : 'test.php', //数据获取接口, 分别为XML
+		submitUrl : '', //数据提交接口
+		listConfig : {
+			'类型' : [ 'Action', 'ParallelSplit','Synchronization', 'SubWorkflow' ]
+		}, //右键菜单配置
+		display : 'workflow', //workflow | rely
+		debug : true //开启，全局回配置jsPlumb_Z全局对象
+	}
+	document.getElementById('button1').onclick = function () {
+		var json = {
+			type : 'ajax',
+			url : '',
+			display : 'workflow'
+		}
+		for(var key in json){
+			jsPlumb_Z_config[key] = json[key];
+		}
+		jsPlumb_Z.init()
+	}
+	document.getElementById('button2').onclick = function () {
+		var json = {
+			type : 'XML',
+			url : 'BMP.xml',
+			display : 'workflow'
+		}
+		for(var key in json){
+			jsPlumb_Z_config[key] = json[key];
+		}
+		jsPlumb_Z.init()
+	}
+	document.getElementById('button3').onclick = function () {
+		var json = {
+			type : 'ajax',
+			url : 'test.php?id=1',
+			display : 'rely'
+		}
+		for(var key in json){
+			jsPlumb_Z_config[key] = json[key];
+		}
+		jsPlumb_Z.init()
+	}
+	document.getElementById('button4').onclick = function () {
+		var json = {
+			type : 'ajax',
+			url : 'test.php?id=2',
+			display : 'rely'
+		}
+		for(var key in json){
+			jsPlumb_Z_config[key] = json[key];
+		}
+		jsPlumb_Z.init()
+	}
+	</script>
+	<script type="text/javascript" src="./workflow.js"></script>
+</body>
+</html>
