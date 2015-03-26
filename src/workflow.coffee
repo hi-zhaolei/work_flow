@@ -552,9 +552,9 @@
           p =
             left : position.x - _node.outerWidth() / 2
             top : position.y - _node.outerHeight()
-        $.extend p, node.style
-        p['border-radius'] = 0 if node.type isnt 'Action'
+        $.extend p, node.style, { "border-radius" : if node.type isnt 'Action' then 0 else '1em' }
         _node.css p
+        _node.attr node.attr if node.attr
         # console.log id + ' : ' + JSON.stringify position
         # console.log id + ' : ' + JSON.stringify p
         MAX.x = p.left if MAX.x > p.left

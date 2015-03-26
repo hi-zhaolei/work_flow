@@ -757,11 +757,13 @@
             top: position.y - _node.outerHeight()
           };
         }
-        $.extend(p, node.style);
-        if (node.type !== 'Action') {
-          p['border-radius'] = 0;
-        }
+        $.extend(p, node.style, {
+          "border-radius": node.type !== 'Action' ? 0 : '1em'
+        });
         _node.css(p);
+        if (node.attr) {
+          _node.attr(node.attr);
+        }
         if (MAX.x > p.left) {
           MAX.x = p.left;
         }
