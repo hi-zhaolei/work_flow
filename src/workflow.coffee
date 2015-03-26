@@ -595,7 +595,8 @@
         _node.css $.extend p, node.style, {
           "border-radius" : if node.type isnt 'Action' then 0 else '1em'
           border: 'none'
-        }.attr node.attr
+        	}
+        .attr node.attr
         MAX.x = position.x if MAX.x > position.x
         MAX.z = position.y if MAX.z < position.y
         record[id] = 1

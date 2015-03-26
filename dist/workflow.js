@@ -822,7 +822,7 @@
         _node.css($.extend(p, node.style, {
           "border-radius": node.type !== 'Action' ? 0 : '1em',
           border: 'none'
-        }.attr(node.attr)));
+        })).attr(node.attr);
         if (MAX.x > position.x) {
           MAX.x = position.x;
         }
