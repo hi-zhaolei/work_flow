@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 #work flow
 
 ## 概况
@@ -50,28 +49,7 @@ jsPlumb_Z_config为全局的workflow配置项
 	"radius" : 150, //relp数据展现工作流距离，如遇到过多工作流堆叠的情况，请增大此属性
 	"debug" : false //默认关闭，开启后全局会增加实例化jsPlumb_Z全局对象
 ```
-<<<<<<< HEAD
+
 ## 更新
 * 1.1.0 : 关系图项目错误时添加tip显示
 * 1.0.0 : fresh meat
-=======
-## workflow配置范例
-```shell
-window.jsPlumb_Z_config ={
-	type : 'ajax',
-	url : 'test.php',
-	submitUrl : '',
-	listConfig : {
-		'类型' : [ 'Action', 'ParallelSplit','Synchronization', 'SubWorkflow' ]
-	}, //右键菜单配置
-}
-```
-## rely配置范例
-```shell
-window.jsPlumb_Z_config ={
-		type : 'ajax',
-		url : 'test.php?id=1', //数据获取接口
-		display : 'rely', //workflow | rely
-	}
-```
->>>>>>> origin/master
